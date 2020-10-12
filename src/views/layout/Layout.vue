@@ -37,7 +37,10 @@
 
 <script>
 import Aside from './components/Aside'
-import {getUserProfile} from '../../api/user'
+import {getUserProfile, updateUser} from '../../api/user'
+import bus from '@/api/bus.js'
+
+
 export default {
   name: 'Layout',
   data(){
@@ -48,6 +51,11 @@ export default {
   },
   created(){
     this.loadUserProfile()
+
+    bus.$on('updateuser',data => {
+      this.user.name = data.name
+      this.user.photo = data.photo
+    })
   },
   methods: {
     loadUserProfile(){

@@ -131,7 +131,7 @@ export default {
     },
     // 图片收藏
     onCollect(img){
-      img.loading = ture
+      img.loading = true
       collectImage(img.id,!img.is_collected).then( res => {
         img.is_collected = !img.is_collected
         img.loading = false
@@ -170,7 +170,7 @@ export default {
     display: flex;
     
     justify-content: space-evenly;
-    opacity: 1;
+    opacity: 0;
   } 
 
   .image-item:hover .image-action {
