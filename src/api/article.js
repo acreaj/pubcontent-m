@@ -26,3 +26,35 @@ export const deleteArticle = articleid => {
     method: 'delete',
   })
 }
+
+// 发表文章
+export const addArticle = (data,draft) => {
+  return request({
+    url:  '/mp/v1_0/articles',
+    method: 'post',
+    params: {
+      draft
+    },
+    data
+  })
+}
+
+// 获取指定文章
+export const getArticle = articleid => {
+  return request({
+    url:  `/mp/v1_0/articles/${articleid}`,
+    method: 'get',
+  })
+}
+
+// 修改指定文章
+export const updateArticle = (articleid,data,draft) => {
+  return request({
+    url:  `/mp/v1_0/articles/${articleid}`,
+    method: 'put',
+    params: {
+      draft
+    },
+    data
+  })
+}

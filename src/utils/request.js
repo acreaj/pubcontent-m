@@ -20,7 +20,7 @@ request.interceptors.request.use(function (config) {
   // config 当前请求相关配置，可以修改
   const user = JSON.parse(window.localStorage.getItem('user'))
   if(user){
-    config.headers. Authorization = `Bearer ${user.token}`
+    config.headers.Authorization = `Bearer ${user.token}`
   }
   return config;
 }, function (error) {

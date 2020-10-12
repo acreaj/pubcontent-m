@@ -93,8 +93,9 @@
               size="mini"
               icon="el-icon-edit"
               circle
-              type="primary"              
-            />
+              type="primary"  
+              @click="onEdit(scope.row.id)"         
+            ></el-button>
             <el-button
               size="mini"
               type="danger"
@@ -201,6 +202,9 @@ export default {
                  
         });
       
+    },
+    onEdit(articleid){
+      this.$router.push('/publish?id='+articleid)
     }
     
   },
